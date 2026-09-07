@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+}
+
+:root {
+  --background: #f8f4ec;
+  --foreground: #172722;
+  --card: #fffdf8;
+  --card-foreground: #172722;
+  --primary: #163c35;
+  --primary-foreground: #ffffff;
+  --secondary: #eadfca;
+  --secondary-foreground: #29443d;
+  --muted: #eee8dc;
+  --muted-foreground: #66716d;
+  --accent: #d5b878;
+  --accent-foreground: #312814;
+  --border: #d9d1c3;
+  --input: #cfc7b9;
+  --ring: #9a7d39;
+}
+
+.dark {
+  --background: #102922;
+  --foreground: #f8f4ec;
+  --card: #17372f;
+  --card-foreground: #fffdf8;
+  --primary: #d5b878;
+  --primary-foreground: #172722;
+  --secondary: #274a41;
+  --secondary-foreground: #fffdf8;
+  --muted: #234039;
+  --muted-foreground: #c4cec9;
+  --accent: #d5b878;
+  --accent-foreground: #172722;
+  --border: #3f5c53;
+  --input: #4d675f;
+  --ring: #d5b878;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+.font-serif {
+  font-family: Georgia, 'Times New Roman', serif;
+}
