@@ -1,0 +1,49 @@
+name: Build and publish static site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Remove Cloudflare-only files from export
+        run: |
+          rm -f dist/client/_headers dist/client/.assetsignore
+          rm -rf dist/client/.vite
+
+      # Publishes dist/client to the `hostinger` branch. Hostinger's Git
+      # deploy (hPanel -> Advanced -> Git) pulls that branch into public_html.
+      - name: Publish to hostinger branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/client
+          publish_branch: hostinger
+          force_orphan: true
+          enable_jekyll: true
+          commit_message: "Deploy ${{ github.sha }}"

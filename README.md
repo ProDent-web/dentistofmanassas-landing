@@ -2,6 +2,8 @@
 
 Static landing pages for **dentistofmanassas.com**, hosted on Hostinger.
 
+Repo: https://github.com/ProDent-web/dentistofmanassas-landing (separate from the main office website repo `manassas-dental-website`, which serves manassasdentalandcosmetics.com).
+
 ## Pages
 
 | URL | Campaign |
