@@ -38,12 +38,13 @@ jobs:
 
       # Publishes dist/client to the `hostinger` branch. Hostinger's Git
       # deploy (hPanel -> Advanced -> Git) pulls that branch into public_html.
+      # History is kept (no force_orphan) so Hostinger's `git pull` can
+      # fast-forward; a rewritten branch makes its pull fail silently.
       - name: Publish to hostinger branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/client
           publish_branch: hostinger
-          force_orphan: true
           enable_jekyll: true
           commit_message: "Deploy ${{ github.sha }}"
