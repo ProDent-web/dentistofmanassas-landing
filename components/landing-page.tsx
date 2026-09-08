@@ -52,7 +52,7 @@ const DIRECTIONS_LINK =
 const campaignContent: Record<CampaignKey, CampaignContent> = {
   general: {
     eyebrow: 'Your local Manassas dentist · New patients welcome',
-    headline: 'A dentist in Manassas who makes',
+    headline: 'Top dentist in Manassas who makes',
     headlineAccent: 'care feel easy.',
     description:
       'Complete, modern dentistry for every stage of life—delivered by three experienced doctors in a calm, boutique setting on Liberia Avenue.',
@@ -153,7 +153,7 @@ const campaignContent: Record<CampaignKey, CampaignContent> = {
   },
   medicaid: {
     eyebrow: 'Medicaid and Medicare accepted',
-    headline: 'A Manassas dentist who',
+    headline: 'Top Manassas dentist who',
     headlineAccent: 'accepts Medicaid.',
     description:
       'Get respectful, modern dental care close to home. We will verify your specific Medicaid benefits and explain what your plan may cover before your visit.',
