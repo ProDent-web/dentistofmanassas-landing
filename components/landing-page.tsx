@@ -43,8 +43,8 @@ type CampaignContent = {
   showPaymentGrid?: boolean;
 };
 
-const PHONE_DISPLAY = '(571) 604-6356';
-const PHONE_LINK = 'tel:5716046356';
+const PHONE_DISPLAY = '(571) 293-8729';
+const PHONE_LINK = 'tel:5712938729';
 const ADDRESS = '9825 Liberia Ave, Suite 133, Manassas, VA 20110';
 const DIRECTIONS_LINK =
   'https://www.google.com/maps/dir/?api=1&destination=9825+Liberia+Ave,+Manassas,+VA+20110';
