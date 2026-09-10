@@ -36,7 +36,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* CallRail dynamic number insertion — must run on every page */}
+        <script
+          type="text/javascript"
+          src="https://cdn.callrail.com/companies/607625076/ff2d2f841d0f15cd2470/12/swap.js"
+        />
+      </body>
     </html>
   );
 }
